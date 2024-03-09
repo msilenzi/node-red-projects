@@ -232,8 +232,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 260,
-        "y": 240,
+        "x": 140,
+        "y": 60,
         "wires": [
             [
                 "eefc8c1469865eca"
@@ -253,8 +253,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 690,
-        "y": 240,
+        "x": 570,
+        "y": 60,
         "wires": []
     },
     {
@@ -269,8 +269,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 460,
-        "y": 240,
+        "x": 340,
+        "y": 60,
         "wires": [
             [
                 "a6ad3c1f1cf21ec0"
@@ -298,8 +298,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 260,
-        "y": 380,
+        "x": 140,
+        "y": 200,
         "wires": [
             [
                 "4b7bbc2d8b56df83",
@@ -319,8 +319,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 440,
-        "y": 380,
+        "x": 320,
+        "y": 200,
         "wires": [
             [
                 "d3ecd74a752498ab"
@@ -340,8 +340,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 710,
-        "y": 380,
+        "x": 590,
+        "y": 200,
         "wires": [],
         "inputLabels": [
             "date"
@@ -626,29 +626,12 @@
         "rh": 0,
         "inputs": 0,
         "x": 140,
-        "y": 260,
+        "y": 60,
         "wires": [
             [
-                "503df2dd8a5fd9fb",
                 "feb83f3630f38827"
             ]
         ]
-    },
-    {
-        "id": "503df2dd8a5fd9fb",
-        "type": "debug",
-        "z": "7e836418240fbe70",
-        "name": "debug 5",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 340,
-        "y": 260,
-        "wires": []
     },
     {
         "id": "feb83f3630f38827",
@@ -663,7 +646,7 @@
         "finalize": "",
         "libs": [],
         "x": 340,
-        "y": 340,
+        "y": 60,
         "wires": [
             [
                 "8e3b50c5fb8a4761"
@@ -690,7 +673,7 @@
         "to": "",
         "reg": false,
         "x": 600,
-        "y": 340,
+        "y": 60,
         "wires": [
             [
                 "5ef123aca96ae681"
@@ -713,7 +696,7 @@
         "templateScope": "local",
         "className": "",
         "x": 1060,
-        "y": 340,
+        "y": 60,
         "wires": [
             []
         ]
@@ -731,7 +714,7 @@
         "finalize": "",
         "libs": [],
         "x": 860,
-        "y": 340,
+        "y": 60,
         "wires": [
             [
                 "873a040cb64512f2"
