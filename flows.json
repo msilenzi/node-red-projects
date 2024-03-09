@@ -1,0 +1,633 @@
+[
+    {
+        "id": "8000e63e3e50e244",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "410162a5845bdc16",
+        "type": "tab",
+        "label": "HTTP Requests and UI",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7e836418240fbe70",
+        "type": "tab",
+        "label": "MQTT and rpi",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "5a2f34369119f08b",
+        "type": "ui_group",
+        "name": "Panic",
+        "tab": "9c0f3d0457a0fa9a",
+        "order": 1,
+        "disp": true,
+        "width": "8",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "9c0f3d0457a0fa9a",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "ff3ae1fb2f5e719e",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "14603a99d2cdc768",
+        "type": "ui_group",
+        "name": "All",
+        "tab": "9c0f3d0457a0fa9a",
+        "order": 2,
+        "disp": true,
+        "width": "8",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "cb3352eb849c5549",
+        "type": "ui_group",
+        "name": "Not Panic",
+        "tab": "9c0f3d0457a0fa9a",
+        "order": 3,
+        "disp": true,
+        "width": "8",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d5c80436ce9ee8f3",
+        "type": "mqtt-broker",
+        "name": "MQTT rpi",
+        "broker": "192.168.1.34",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "667e5de05ce6b89b",
+        "type": "inject",
+        "z": "8000e63e3e50e244",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 260,
+        "y": 240,
+        "wires": [
+            [
+                "eefc8c1469865eca"
+            ]
+        ]
+    },
+    {
+        "id": "a6ad3c1f1cf21ec0",
+        "type": "debug",
+        "z": "8000e63e3e50e244",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "eefc8c1469865eca",
+        "type": "function",
+        "z": "8000e63e3e50e244",
+        "name": "getLocaleString",
+        "func": "msg.payload = new Date(msg.payload).toLocaleString()\nreturn msg\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 240,
+        "wires": [
+            [
+                "a6ad3c1f1cf21ec0"
+            ]
+        ]
+    },
+    {
+        "id": "47928f14f2dde6bc",
+        "type": "inject",
+        "z": "8000e63e3e50e244",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 260,
+        "y": 380,
+        "wires": [
+            [
+                "4b7bbc2d8b56df83",
+                "eefc8c1469865eca"
+            ]
+        ]
+    },
+    {
+        "id": "4b7bbc2d8b56df83",
+        "type": "function",
+        "z": "8000e63e3e50e244",
+        "name": "getDay",
+        "func": "msg.payload = new Date(msg.payload).getDay()\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 380,
+        "wires": [
+            [
+                "d3ecd74a752498ab"
+            ]
+        ]
+    },
+    {
+        "id": "d3ecd74a752498ab",
+        "type": "debug",
+        "z": "8000e63e3e50e244",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 380,
+        "wires": [],
+        "inputLabels": [
+            "date"
+        ]
+    },
+    {
+        "id": "c2b577792d3c5c50",
+        "type": "http request",
+        "z": "410162a5845bdc16",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.csv",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 350,
+        "y": 140,
+        "wires": [
+            [
+                "b1af3e9d698863f5"
+            ]
+        ]
+    },
+    {
+        "id": "b1af3e9d698863f5",
+        "type": "csv",
+        "z": "410162a5845bdc16",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 550,
+        "y": 140,
+        "wires": [
+            [
+                "f4c5cb1e47ed293c",
+                "a639cf08ad5a3e3e",
+                "3f853ae79e25361b"
+            ]
+        ]
+    },
+    {
+        "id": "c3da0cf5932ef862",
+        "type": "comment",
+        "z": "410162a5845bdc16",
+        "name": "",
+        "info": "Este es un comentario\n\n# Hola, Mundo!\n\n```js\nconsole.log('Hola, Mundo!')\n```",
+        "x": 140,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "f4c5cb1e47ed293c",
+        "type": "function",
+        "z": "410162a5845bdc16",
+        "name": "function 1",
+        "func": "msg.payload = JSON.stringify(msg.payload, null, 2)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 60,
+        "wires": [
+            [
+                "03a343ab1cc091a7"
+            ]
+        ]
+    },
+    {
+        "id": "03a343ab1cc091a7",
+        "type": "ui_template",
+        "z": "410162a5845bdc16",
+        "group": "14603a99d2cdc768",
+        "name": "",
+        "order": 1,
+        "width": "8",
+        "height": "8",
+        "format": "<pre ng-bind-html=\"msg.payload\"></pre>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 940,
+        "y": 60,
+        "wires": [
+            [
+                "f4257283de58a378"
+            ]
+        ]
+    },
+    {
+        "id": "a639cf08ad5a3e3e",
+        "type": "function",
+        "z": "410162a5845bdc16",
+        "name": "function 2",
+        "func": "const panic = msg.payload.filter(({mag}) => mag > 5)\nmsg.payload = JSON.stringify(panic, null, 2)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 140,
+        "wires": [
+            [
+                "f9f3959471e8f893"
+            ]
+        ]
+    },
+    {
+        "id": "f9f3959471e8f893",
+        "type": "ui_template",
+        "z": "410162a5845bdc16",
+        "group": "5a2f34369119f08b",
+        "name": "",
+        "order": 1,
+        "width": "8",
+        "height": "8",
+        "format": "<pre ng-bind-html=\"msg.payload\"></pre>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 940,
+        "y": 140,
+        "wires": [
+            [
+                "4ac5914f6e53180d"
+            ]
+        ]
+    },
+    {
+        "id": "3f853ae79e25361b",
+        "type": "function",
+        "z": "410162a5845bdc16",
+        "name": "function 3",
+        "func": "const notPanic = msg.payload.filter(({ mag }) => mag < 5)\nmsg.payload = JSON.stringify(notPanic, null, 2)\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 220,
+        "wires": [
+            [
+                "28ddc3febeeb2b65"
+            ]
+        ]
+    },
+    {
+        "id": "28ddc3febeeb2b65",
+        "type": "ui_template",
+        "z": "410162a5845bdc16",
+        "group": "cb3352eb849c5549",
+        "name": "",
+        "order": 1,
+        "width": "8",
+        "height": "8",
+        "format": "<pre ng-bind-html=\"msg.payload\"></pre>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 940,
+        "y": 220,
+        "wires": [
+            [
+                "1d3f9f55c086b12c"
+            ]
+        ]
+    },
+    {
+        "id": "6654b60c7c7a5d9b",
+        "type": "inject",
+        "z": "410162a5845bdc16",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 140,
+        "wires": [
+            [
+                "c2b577792d3c5c50"
+            ]
+        ]
+    },
+    {
+        "id": "f4257283de58a378",
+        "type": "debug",
+        "z": "410162a5845bdc16",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1140,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "4ac5914f6e53180d",
+        "type": "debug",
+        "z": "410162a5845bdc16",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1140,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "1d3f9f55c086b12c",
+        "type": "debug",
+        "z": "410162a5845bdc16",
+        "name": "debug 4",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1140,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "ad783d3137fca54b",
+        "type": "mqtt in",
+        "z": "7e836418240fbe70",
+        "name": "testTopic",
+        "topic": "testTopic",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "d5c80436ce9ee8f3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 260,
+        "wires": [
+            [
+                "503df2dd8a5fd9fb"
+            ]
+        ]
+    },
+    {
+        "id": "503df2dd8a5fd9fb",
+        "type": "debug",
+        "z": "7e836418240fbe70",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 340,
+        "y": 260,
+        "wires": []
+    }
+]
