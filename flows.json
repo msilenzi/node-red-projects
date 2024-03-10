@@ -212,6 +212,17 @@
         "className": ""
     },
     {
+        "id": "f189fe5fed599cde",
+        "type": "ui_group",
+        "name": "nodeTopic",
+        "tab": "e34c3fe0579bc005",
+        "order": 2,
+        "disp": true,
+        "width": "8",
+        "collapse": false,
+        "className": ""
+    },
+    {
         "id": "667e5de05ce6b89b",
         "type": "inject",
         "z": "8000e63e3e50e244",
@@ -340,7 +351,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 590,
+        "x": 570,
         "y": 200,
         "wires": [],
         "inputLabels": [
@@ -720,5 +731,124 @@
                 "873a040cb64512f2"
             ]
         ]
+    },
+    {
+        "id": "17f17405e3322ad3",
+        "type": "mqtt in",
+        "z": "7e836418240fbe70",
+        "name": "nodeTestTopic",
+        "topic": "nodeTestTopic",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "d5c80436ce9ee8f3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 160,
+        "wires": [
+            [
+                "8129473b8dbc4b54"
+            ]
+        ]
+    },
+    {
+        "id": "8129473b8dbc4b54",
+        "type": "function",
+        "z": "7e836418240fbe70",
+        "name": "function 3",
+        "func": "const messages = flow.get('nodeMessages')\nmsg.payload = [...messages, msg.payload]\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nflow.set('nodeMessages', ['first'])\n",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 160,
+        "wires": [
+            [
+                "fca08e3236da5346"
+            ]
+        ]
+    },
+    {
+        "id": "fca08e3236da5346",
+        "type": "change",
+        "z": "7e836418240fbe70",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "nodeMessages",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 590,
+        "y": 160,
+        "wires": [
+            [
+                "034d7ba016542182"
+            ]
+        ]
+    },
+    {
+        "id": "f3cdeebcc51cba9e",
+        "type": "ui_template",
+        "z": "7e836418240fbe70",
+        "group": "f189fe5fed599cde",
+        "name": "",
+        "order": 1,
+        "width": "8",
+        "height": "12",
+        "format": "<pre ng-bind-html=\"msg.payload\"></pre>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1060,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "034d7ba016542182",
+        "type": "function",
+        "z": "7e836418240fbe70",
+        "name": "function 4",
+        "func": "msg.payload = JSON.stringify(msg.payload, null, 2)\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 860,
+        "y": 160,
+        "wires": [
+            [
+                "f3cdeebcc51cba9e"
+            ]
+        ]
+    },
+    {
+        "id": "f76216d7afc1dabf",
+        "type": "comment",
+        "z": "7e836418240fbe70",
+        "name": "",
+        "info": "Para que funcione tiene que estar levantado el broker mqtt en la Raspberry Pi.\n\nPara enviar un mensaje ejecutar el siguiente comando desde la rpi:\n```\nmosquitto_pub -d -t testTopic -m \"Mensaje\" -u nwtpi -P mosquitto123\n```\n\nPara suscribirse a un mensaje ejecutar el siguiente comando:\n```\nmosquitto_sub -d -t testTopic -u nwtpi -P mosquitto123\n```\n",
+        "x": 140,
+        "y": 260,
+        "wires": []
     }
 ]
