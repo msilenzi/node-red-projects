@@ -2,7 +2,6 @@ const Gamepad = require("./Gamepad");
 const xboxButtonsMapping = require("./buttons-mapping/xbox.json");
 
 (async () => {
-  console.log("Starting");
   const gameController = new Gamepad(xboxButtonsMapping);
 
   await gameController.start();
@@ -11,9 +10,5 @@ const xboxButtonsMapping = require("./buttons-mapping/xbox.json");
     console.log("gamepad connected", e)
   );
 
-  gameController.handleGamepadUpdated((status) => {
-    console.log('statussssssss', status)
-  })
-
-  console.log("end");
+  gameController.handleGamepadUpdated(console.log)
 })();
