@@ -50,6 +50,8 @@ function gameLoop() {
     const gamepad = navigator.getGamepads()[0];
     handleButtons(gamepad.buttons);
     handleSticks(gamepad.axes);
+
+    console.log(navigator.getGamepads())
   }
 
   requestAnimationFrame(gameLoop);
