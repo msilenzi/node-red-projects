@@ -102,7 +102,6 @@ function updateStatus() {
     for (var i=0; i<controller.axes.length; i++) {
       var a = axes[i];
       var v = axesValue[i]
-      console.log(a)
       v.innerHTML = a.innerHTML = i + ": " + controller.axes[i].toFixed(4);
       a.setAttribute("value", controller.axes[i]);
     }
@@ -114,6 +113,7 @@ function scangamepads() {
   var gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);
   for (var i = 0; i < gamepads.length; i++) {
     if (gamepads[i] && (gamepads[i].index in controllers)) {
+      console.log(gamepads[i]);
       controllers[gamepads[i].index] = gamepads[i];
     }
   }
